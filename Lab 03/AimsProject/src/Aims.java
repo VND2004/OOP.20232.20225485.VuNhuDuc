@@ -17,7 +17,9 @@ public class Aims {
 		DigitalVideoDisc dvd4 = new DigitalVideoDisc("The Lion King",
 				"Animation", "Roger Allers", 87, 19.95f);
 		
-		anOrder.addDigitalVideoDisc(dvd1, dvd2, dvd3);
+//		anOrder.addDigitalVideoDisc(dvd1, dvd2, dvd3);
+		
+		anOrder.displayCart();
 		
 		System.out.println("Total Cost is: ");
 		System.out.println(anOrder.totalCost());

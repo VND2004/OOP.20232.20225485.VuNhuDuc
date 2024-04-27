@@ -54,4 +54,20 @@ public class Cart {
 		}
 		return (float)Math.round(total * 100) / 100;
 	}
+	
+	public void displayCart() {
+		int index = 0;
+		System.out.println("***********************CART***********************");
+		System.out.println("Ordered Items:");
+		
+		for(DigitalVideoDisc disc : itemsOrdered) {
+			if(disc != null) {
+				index++;
+				System.out.println(index + ". " + disc);
+			}
+		}
+		System.out.println("Total cost: " + this.totalCost());
+        System.out.println("***************************************************");
+		
+	}
 }

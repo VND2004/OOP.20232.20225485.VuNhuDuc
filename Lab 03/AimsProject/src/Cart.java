@@ -70,4 +70,27 @@ public class Cart {
         System.out.println("***************************************************");
 		
 	}
+	
+	public void searchById(int searchId) {
+		if(searchId < qtyOrdered) {
+			System.out.println(itemsOrdered[searchId]);
+		} else {
+			System.out.println("No match is found!");
+		}
+	}
+	
+	public void searchByTitle(String searchTitle) {
+		boolean check = false;
+		for(DigitalVideoDisc disc : itemsOrdered) {
+			if(disc != null) {
+				if(disc.isMatch(searchTitle)) {
+					System.out.println(disc);
+					check = true;
+				}
+			}
+		}
+		if (check == false) {
+			System.out.println("No match is found!");
+		}
+	}
 }

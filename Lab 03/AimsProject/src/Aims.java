@@ -20,6 +20,8 @@ public class Aims {
 //		anOrder.addDigitalVideoDisc(dvd1, dvd2, dvd3);
 		
 		anOrder.displayCart();
+		anOrder.searchById(1);
+		anOrder.searchByTitle("Aladin");
 		
 		System.out.println("Total Cost is: ");
 		System.out.println(anOrder.totalCost());

@@ -19,7 +19,7 @@ public class Aims {
 		
 //		anOrder.addDigitalVideoDisc(dvd1, dvd2, dvd3);
 		
-		anOrder.displayCart();
+		anOrder.print();
 		anOrder.searchById(1);
 		anOrder.searchByTitle("Aladin");
 		

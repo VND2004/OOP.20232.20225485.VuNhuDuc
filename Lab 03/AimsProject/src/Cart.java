@@ -55,7 +55,7 @@ public class Cart {
 		return (float)Math.round(total * 100) / 100;
 	}
 	
-	public void displayCart() {
+	public void print() {
 		int index = 0;
 		System.out.println("***********************CART***********************");
 		System.out.println("Ordered Items:");

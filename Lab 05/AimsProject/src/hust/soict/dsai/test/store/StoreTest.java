@@ -12,14 +12,14 @@ public class StoreTest {
 				"Science Fiction", "George Lucas", 87, 24.95f);
 		
 		// Test addDVD
-		store_1.addDVD(dvd1);
-		store_1.addDVD(dvd2);
+		store_1.addMedia(dvd1);
+		store_1.addMedia(dvd2);
 		store_1.print();
 		
 		// Test removeDVD
-		store_1.removeDVD(dvd1);
+		store_1.removeMedia(dvd1);
 		store_1.print();
 		
-		store_1.removeDVD(dvd1);
+		store_1.removeMedia(dvd1);
 	}
 }

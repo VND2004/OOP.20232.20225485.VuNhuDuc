@@ -4,29 +4,41 @@ import java.util.Collections;
 
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
-	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 	
-	public void addMedia(Media media) {
+	public ObservableList<Media> getItemsOrdered() {
+		return itemsOrdered;
+	}
+
+	public boolean addMedia(Media media) {
 		if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED) {
             System.out.println("The cart is almost full");
+            return false;
         } else {
             itemsOrdered.add(media);
             System.out.println("The disc has been added");
         }
+		return true;
 	}
 	
-	public void addMedia(Media ...mediaList) {
+	public boolean addMedia(Media ...mediaList) {
 		for (Media media : mediaList) {
-			addMedia(media);
+			if(!addMedia(media)) {
+				return false;
+			}
 		}
+		return true;
 	}
 	
-	public void addMedia(Media media1, Media media2) {
+	public boolean addMedia(Media media1, Media media2) {
 		addMedia(media1);
 		addMedia(media2);
+		return true;
 	}
 	
 	public void removeMedia(Media media) {
@@ -103,4 +115,14 @@ public class Cart {
     public void sortCartByCost() {
         Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
     }
+    
+    public void empty() {
+		itemsOrdered.clear();
+	}
+    
+    public void place() {
+		System.out.println("An order has been created. The cart will now be emptied.");
+		this.empty();
+		
+	}
 }

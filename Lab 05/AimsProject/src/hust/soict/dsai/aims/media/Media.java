@@ -56,15 +56,24 @@ public abstract class Media {
 		this.cost = cost;
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if(obj instanceof Media) {
-			Media m = (Media) obj;
-			return title == m.getTitle();
-		} else {
-			return false;
-		}
-	}
+	public boolean equals(Object o) {
+    	try {
+    		if (o instanceof Media) {
+    			if (this.title == ((Media)o).title) {
+    				return true;
+    			}
+    			else {
+    				return false;
+    			}
+    		}
+    		else {
+    			return false;
+    		}
+    	}
+    	catch (NullPointerException n) {
+    		return false;
+    	}
+    }
 	
 	@Override
 	public String toString() {

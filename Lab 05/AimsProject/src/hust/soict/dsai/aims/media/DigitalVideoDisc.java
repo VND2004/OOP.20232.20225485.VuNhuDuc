@@ -1,7 +1,5 @@
 package hust.soict.dsai.aims.media;
 
-import hust.soict.dsai.aims.exception.PlayerException;
-
 public class DigitalVideoDisc extends Disc implements Playable{
 	private static int nbDigitalVideoDiscs = 0;
 	
@@ -21,7 +19,7 @@ public class DigitalVideoDisc extends Disc implements Playable{
 		this(title, category, null, 0, cost);
 	}
 	
-	public void play() throws PlayerException{
+	public void play() {
 		System.out.println("Playing DVD: " + this.getTitle());
 		System.out.println("DVD length: " + this.getLength());
 	}

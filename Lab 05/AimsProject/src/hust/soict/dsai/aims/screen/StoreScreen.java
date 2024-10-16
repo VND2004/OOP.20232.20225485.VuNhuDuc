@@ -21,14 +21,13 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import hust.soict.dsai.aims.store.Store;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
 
 public class StoreScreen extends JFrame{
 	
 	private Store store;
 
-	public StoreScreen(Store store) {
+	public StoreScreen() {
 		this.store = store;
         Container cp = getContentPane();
         cp.setLayout(new BorderLayout());
@@ -107,19 +106,4 @@ public class StoreScreen extends JFrame{
         return center;
     }
 
-	public static void main(String[] args) {
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King","Animation","Roger Allers",87,19.95f);
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars","Science Fiction","George Lucas",87,24.95f);
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin","Animation",18.99f);
-        DigitalVideoDisc dvd4 = new DigitalVideoDisc("Aladdin2","Animation",18.99f);
-        
-        Store s= new Store();
-        //add DVDs to store
-        s.addMedia(dvd1);
-        s.addMedia(dvd2);
-        s.addMedia(dvd3);
-        s.addMedia(dvd4);
-        new StoreScreen(s);
-
-    }
 }

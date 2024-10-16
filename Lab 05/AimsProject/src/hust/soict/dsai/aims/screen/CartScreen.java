@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.swing.JFrame;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;

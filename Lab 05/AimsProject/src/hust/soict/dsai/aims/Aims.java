@@ -1,7 +1,6 @@
 package hust.soict.dsai.aims;
 
 import hust.soict.dsai.aims.cart.*;
-import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.*;
 import hust.soict.dsai.aims.store.*;
 
@@ -130,12 +129,7 @@ public class Aims {
                                             case 1: cart.addMedia(mediaStore); break;
                                             case 2:
                                                 if (mediaStore instanceof DigitalVideoDisc) {
-                                                    try {
-														((DigitalVideoDisc) mediaStore).play();
-													} catch (PlayerException e) {
-														// TODO Auto-generated catch block
-														e.printStackTrace();
-													}
+                                                    ((DigitalVideoDisc) mediaStore).play();
                                                 } else {
                                                     System.out.println("This media can not play !");
                                                 }
@@ -168,12 +162,7 @@ public class Aims {
                                 mediaStore = store.searchInStore(title); //search media
                                 if (mediaStore != null) {
                                     if (mediaStore instanceof DigitalVideoDisc) {
-                                        try {
-											((DigitalVideoDisc) mediaStore).play();
-										} catch (PlayerException e) {
-											// TODO Auto-generated catch block
-											e.printStackTrace();
-										}
+                                        ((DigitalVideoDisc) mediaStore).play();
                                     } else {
                                         System.out.println("This is not an DVD");
                                     }
@@ -276,12 +265,7 @@ public class Aims {
                                 title = scString.nextLine();
                                 mediaCart = cart.searchInCart(title);
                                 if(mediaCart != null){
-                                    try {
-										((DigitalVideoDisc) mediaCart).play();
-									} catch (PlayerException e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
-									}
+                                    ((DigitalVideoDisc) mediaCart).play();
                                 } else {
                                     System.out.println("Media does not exist in cart!");
                                 }
